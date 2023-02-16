@@ -2,7 +2,6 @@ import { pool } from "../../Config/index.js";
 import uniqid from 'uniqid';
 
 export const addTicket = async (req, res) => {
-  console.log(req.body)
   const Id = uniqid().toUpperCase()
 
   const { Nombre , Descripcion , Empleado , Estado ,  FechaInicio , FechaTermino } = req.body

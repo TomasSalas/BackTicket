@@ -7,7 +7,7 @@ export const signToken = (user) => {
     sub: user.ID_EMPLEADO,
     role: user.ID_CARGO
   }
-  let token = jwt.sign( payload, process.env.SECRET_TOKEN , { expiresIn: 60 * 10})
+  let token = jwt.sign( payload, process.env.SECRET_TOKEN , { expiresIn: "600s"})
   return { user , token }
 }
 
