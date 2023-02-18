@@ -10,15 +10,16 @@ import { getEstadoTicket } from '../Controllers/getEstadoTicket.js'
 import { getTickets } from '../Controllers/Ticket/getTicket.js'
 import { updateStateTicket } from '../Controllers/Ticket/updateStateTicket.js'
 import { signin } from '../Controllers/Login/signin.js'
-
+import { updateEmployees } from '../Controllers/Employees/updateEmployees.js'
 import bodyParser from 'body-parser';
 
 const router = express.Router();
 const jsonParse = bodyParser.json()
 
 router.post("/addEmployees", jsonParse , addEmployees)
-router.post("/updateStateEmployees" ,jsonParse ,  updateStateEmployees)
-router.post("/deletedEmployees" ,jsonParse ,  deletedEmployees)
+router.post("/updateStateEmployees" ,jsonParse , updateStateEmployees)
+router.post("/updateEmployees" ,jsonParse , updateEmployees)
+router.post("/deletedEmployees" ,jsonParse , deletedEmployees)
 router.get("/viewEmployees", getEmployees)
 router.get("/viewEmployeescheck", getEmployeesCheck)
 
