@@ -14,7 +14,7 @@ export const signToken = (user) => {
 export const signin = async (req, res) => {
   const { email , password } = req.body;
   try {
-    const [rows] = await pool.query(`SELECT  * FROM EMPLEADO WHERE CORREO = ?` , [email]);
+    const [rows] = await pool.query(`SELECT  * FROM Empleado WHERE CORREO = ?` , [email]);
     if(rows.length === 0){
       return res.json({error: 'error'})
     }
@@ -27,6 +27,7 @@ export const signin = async (req, res) => {
     return res.json({error: null , loginMatch: signToken(user)})
   }
   catch (err) {
+    console.log(err)
     return res.json({error: 'err'})
   }
 

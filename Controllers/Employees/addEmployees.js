@@ -5,7 +5,7 @@ import bcrypt from 'bcrypt'
 export const addEmployees = async (req, res) => {
   const Id = uniqid().toUpperCase()
   const { Nombre , Apellidos , Correo , Telefono ,  Cargo } = req.body
-  const Password = await (await bcrypt.hash(`${Nombre.toUpperCase()}${Telefono.substr(-4)}`.split(" ").join("") , 10))
+  const Password = (await bcrypt.hash(`${Nombre.toUpperCase()}${Telefono.substr(-4)}`.split(" ").join("") , 10))
   const Estado = 1
 
   try {
