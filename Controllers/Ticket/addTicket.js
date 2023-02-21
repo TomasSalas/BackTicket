@@ -6,7 +6,7 @@ export const addTicket = async (req, res) => {
 
   const { Nombre , Descripcion , Empleado , Estado ,  FechaInicio , FechaTermino } = req.body
   const [rows] = await pool.query(
-    'INSERT INTO ticketera.TICKET (ID_TICKET, NOMBRE, DESCRIPCION, FECHA_INICIO, FECHA_TERMINO, ID_EMPLEADO, ID_ESTADO) VALUES(?,?,?,?,?,?,?)',
+    'INSERT INTO TICKET (ID_TICKET, NOMBRE, DESCRIPCION, FECHA_INICIO, FECHA_TERMINO, ID_EMPLEADO, ID_ESTADO) VALUES(?,?,?,?,?,?,?)',
     [Id , Nombre, Descripcion , FechaInicio , FechaTermino , Empleado , Estado])
   res.json('OK');
 }
